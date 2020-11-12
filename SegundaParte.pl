@@ -1,0 +1,20 @@
+node(a).
+node(b).
+node(c).
+node(d).
+edge(a,b).
+edge(a,c).
+edge(a,d).
+edge(c,d).
+node(X) :- edge(X,_).
+node(Y) :- edge(X,_).
+
+node(X) :- edge(_,X).
+node(Y) :- edge(_,Y).
+se_mueve(X,X,[]).
+se_mueve(X,Y,[]).
+
+se_mueve(Y,Y,[]).
+se_mueve(Y,X,[]).
+
+se_mueve(X,Y,[Z|Ps]) :- edge(X,Z), se_mueve(Z,Y,Ps).
