@@ -12,6 +12,9 @@ pathold(S, G) :- edge(S, X), pathold(X, G).
 path(S, G, V, [G|V], 1) :- edge(S, G).
 path(S, G, V, P, D) :- edge(S, X), X\=G, not(mem(X, V)), path(X, G, [X|V], P, D1), D is D1+1.
 
+pathfinal(S, G, V, P) :- edge(S, G), addatend(G, V, P).
+pathfinal(S, G, V, P) :- edge(S, X), X\=G, not(mem(X, V)), addatend(X, V, V2), pathfinal(X, G, V2, P).
+
 iterdeepening(S, G, L, P) :- path(S, G, [S], P2, L), rev1(P, P2) ; L1 is L + 1, L1<25, iterdeepening(S, G, L1, P).
 
 not(P) :- P, !, fail;true.
