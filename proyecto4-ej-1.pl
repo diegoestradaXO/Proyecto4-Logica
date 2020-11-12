@@ -22,20 +22,6 @@ mujer(clara).
 mujer(susan).
 mujer(valeria).
 
-% bidireccional
-
-casado_con(david, paulina).
-casado_con(horacio, mariel).
-casado_con(fernando, clara).
-casado_con(jose, dayanne).
-casado_con(jared, susan).
-
-casado_con(paulina, david).
-casado_con(mariel, horacio).
-casado_con(clara, fernando).
-casado_con(dayanne, jose).
-casado_con(susan, jared).
-
 parent(david, horacio).
 parent(david, diego).
 parent(david, francisco).
@@ -57,9 +43,8 @@ parent(mariel, victor).
 parent(mariel, pablo).
 parent(mariel, jared).
 parent(mariel, sam).
-parent(susy, fernando).
 parent(nancy, juan).
-parent(horacio,susy).
+parent(horacio, susy).
 
 
 parent(diego,dayanne).
